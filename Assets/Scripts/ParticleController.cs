@@ -5,20 +5,24 @@ using UnityEngine.ParticleSystemJobs;
 
 public class ParticleController : MonoBehaviour
 {
+    [Header("Movement Particle")]
     [SerializeField] ParticleSystem movementParticle;
-
     [Range(0, 10)]
     [SerializeField] int occurAfterVelocity;
-
     [Range(0, 0.2f)]
     [SerializeField] float dustFormationPeriod;
-
     [SerializeField] Rigidbody2D playerRb;
 
     float counter;
     bool isOnGround;
-
+    [Header(" ")]
     [SerializeField] ParticleSystem fallParticle;
+    [SerializeField] ParticleSystem touchParticle;
+
+    private void Start()
+    {
+        touchParticle.transform.parent = null;
+    }
 
     private void Update()
     {
@@ -31,6 +35,12 @@ public class ParticleController : MonoBehaviour
                 counter = 0;
             }
         }
+    }
+
+    public void PlayTouchPaticle(Vector2 pos)
+    {
+        touchParticle.transform.position = pos;
+        touchParticle.Play();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

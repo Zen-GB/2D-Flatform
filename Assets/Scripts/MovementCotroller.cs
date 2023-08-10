@@ -8,6 +8,8 @@ public class MovementCotroller : MonoBehaviour
 {
     Rigidbody2D rb;
 
+    public ParticleController particleController;
+
     bool btnPressed;
 
     [SerializeField] int speed;
@@ -46,6 +48,7 @@ public class MovementCotroller : MonoBehaviour
 
     public void Flip()
     {
+        particleController.PlayTouchPaticle(wallCheckPoint.position);
         transform.Rotate(0, 180, 0);
         UpdateReativeTransform();
     }
