@@ -11,12 +11,15 @@ public class CameraController : MonoBehaviour
     [Range(0, 1)]
     public float smoothTime;
 
+    public Animation anim;
+
     [Header ("Axis Limitation")]
     public Vector2 xlimit; //X Axis Limitation
     public Vector2 ylimit; //Y Axis Limitation
 
     private void Awake()
     {
+        anim = GetComponent<Animation>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
     }
 

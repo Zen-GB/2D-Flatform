@@ -18,6 +18,7 @@ public class ParticleController : MonoBehaviour
     [Header(" ")]
     [SerializeField] ParticleSystem fallParticle;
     [SerializeField] ParticleSystem touchParticle;
+    [SerializeField] ParticleSystem dieParticle;
 
     private void Start()
     {
@@ -37,10 +38,15 @@ public class ParticleController : MonoBehaviour
         }
     }
 
-    public void PlayTouchPaticle(Vector2 pos)
+    public void PlayTouchParticle(Vector2 pos)
     {
         touchParticle.transform.position = pos;
         touchParticle.Play();
+    }
+
+    public void PlayParticle(ParticleSystem particle, Vector2 pos1)
+    {
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

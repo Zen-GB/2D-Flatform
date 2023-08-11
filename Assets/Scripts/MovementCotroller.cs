@@ -48,12 +48,12 @@ public class MovementCotroller : MonoBehaviour
 
     public void Flip()
     {
-        particleController.PlayTouchPaticle(wallCheckPoint.position);
+        particleController.PlayTouchParticle(wallCheckPoint.position);
         transform.Rotate(0, 180, 0);
         UpdateReativeTransform();
     }
 
-    void UpdateReativeTransform()
+    public void UpdateReativeTransform()
     {
         reativeTransform = transform.InverseTransformVector(Vector2.one);
     }
