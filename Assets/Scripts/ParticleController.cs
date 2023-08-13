@@ -44,11 +44,6 @@ public class ParticleController : MonoBehaviour
         touchParticle.Play();
     }
 
-    public void PlayParticle(ParticleSystem particle, Vector2 pos1)
-    {
-        
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Ground"))

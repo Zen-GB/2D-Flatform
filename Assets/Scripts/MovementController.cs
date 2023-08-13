@@ -23,6 +23,9 @@ public class MovementCotroller : MonoBehaviour
 
     Vector2 reativeTransform;
 
+    public bool isOnPlatform;
+    public Rigidbody2D platformrb;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -37,7 +40,16 @@ public class MovementCotroller : MonoBehaviour
     {
         UpdateSpeedMultilier();
         float targetSpeed = speed * speedMultiplier * reativeTransform.x;
-        rb.velocity = new Vector2 (targetSpeed, rb.velocity.y);
+
+        if (isOnPlatform)
+        {
+            rb.velocity = new Vector2(targetSpeed + platformrb.velocity.x, rb.velocity.y);
+        }
+
+        else
+        {
+            rb.velocity = new Vector2(targetSpeed, rb.velocity.y);
+        }
 
         isWallTouch = Physics2D.OverlapBox(wallCheckPoint.position, new Vector2(0.04f, 0.55f), 0, wallLayer);
         if (isWallTouch)

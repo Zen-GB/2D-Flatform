@@ -10,7 +10,7 @@ public class GameController : MonoBehaviour
     CameraController cameraController;
     public ParticleController particleController;
 
-    UnityEngine.Quaternion playerRotation;
+    Quaternion playerRotation;
     MovementCotroller movementCotroller;
 
 
@@ -34,14 +34,13 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public void UpdateCheckPointPos(Vector2 pos)
+    public void UpdateCheckPoint(Vector2 pos)
     {
         checkPointPos = pos;
         playerRotation = transform.rotation;
     }
     void Die()
     {
-        particleController.PlayParticle(ParticleSystem.Particle.die, transform.position);
         StartCoroutine(Respawn(0.05f));
     }
 
