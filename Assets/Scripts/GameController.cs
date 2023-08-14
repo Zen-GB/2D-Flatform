@@ -19,6 +19,7 @@ public class GameController : MonoBehaviour
         movementCotroller = GetComponent<MovementCotroller>();
         cameraController = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraController>();
         rb = GetComponent<Rigidbody2D>();
+        particleController = GetComponent<ParticleController>();
     }
     private void Start ()
     {
