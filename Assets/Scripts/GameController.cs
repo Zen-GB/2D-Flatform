@@ -13,6 +13,8 @@ public class GameController : MonoBehaviour
     Quaternion playerRotation;
     MovementCotroller movementCotroller;
 
+    AudioManager audioManager;
+
 
     private void Awake()
     {
@@ -20,6 +22,7 @@ public class GameController : MonoBehaviour
         cameraController = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraController>();
         rb = GetComponent<Rigidbody2D>();
         particleController = GetComponent<ParticleController>();
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
     private void Start ()
     {
@@ -42,7 +45,9 @@ public class GameController : MonoBehaviour
     }
     void Die()
     {
-        StartCoroutine(Respawn(0.05f));
+        //particleController.PlayParticle(ParticleController.Particles.die, transform.position);
+        audioManager.PlaySFX(audioManager.death);
+        StartCoroutine(Respawn(1f));
     }
 
     IEnumerator Respawn(float duration)

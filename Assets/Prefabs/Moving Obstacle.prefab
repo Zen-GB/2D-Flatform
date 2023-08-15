@@ -120,7 +120,7 @@ Transform:
   m_GameObject: {fileID: 8636755846413640824}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.693826, y: -0.17914772, z: 0}
+  m_LocalPosition: {x: -0.49999976, y: -0.9291477, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -146,11 +146,11 @@ PrefabInstance:
       objectReference: {fileID: 8636755846413640824}
     - target: {fileID: 5999023247640579732, guid: b3555beb7ee4b8441a77edc3073a5b29, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.693826
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5999023247640579732, guid: b3555beb7ee4b8441a77edc3073a5b29, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.32085228
+      value: -0.42914772
       objectReference: {fileID: 0}
     - target: {fileID: 5999023247640579732, guid: b3555beb7ee4b8441a77edc3073a5b29, type: 3}
       propertyPath: m_LocalPosition.z
@@ -187,8 +187,45 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3213322610837316596, guid: b3555beb7ee4b8441a77edc3073a5b29, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4265861412390299375}
   m_SourcePrefab: {fileID: 100100000, guid: b3555beb7ee4b8441a77edc3073a5b29, type: 3}
+--- !u!1 &1013125536510347512 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3213322610837316596, guid: b3555beb7ee4b8441a77edc3073a5b29, type: 3}
+  m_PrefabInstance: {fileID: 2492561719426280204}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4265861412390299375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1013125536510347512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000
+  m_ShapePath:
+  - {x: 0.07922268, y: -0.0010843277, z: 0}
+  - {x: 0.50224066, y: 0.82178116, z: 0}
+  - {x: 0.9223099, y: -0.0019676685, z: 0}
+  m_ShapePathHash: -1354375409
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -60422
+  m_LocalBounds:
+    m_Center: {x: 0.5007663, y: 0.40990674, z: 0}
+    m_Extent: {x: 0.4215436, y: 0.4118744, z: 0}
 --- !u!4 &8203188461240231320 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5999023247640579732, guid: b3555beb7ee4b8441a77edc3073a5b29, type: 3}

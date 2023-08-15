@@ -11,8 +11,11 @@ public class CheckPoint : MonoBehaviour
     public Sprite active, passive;
     Collider2D coll;
 
+    AudioManager audioManager;
+
     private void Awake()
     {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
         gameController = GameObject.FindGameObjectWithTag("Player").GetComponent<GameController>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         coll = GetComponent<Collider2D>();
@@ -22,6 +25,7 @@ public class CheckPoint : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            audioManager.PlaySFX(audioManager.checkPoint);
             gameController.UpdateCheckPoint(respawnPoint.position);
             spriteRenderer.sprite = active;
             coll.enabled = false;
