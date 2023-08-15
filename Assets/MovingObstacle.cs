@@ -1,28 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Rendering;
 using UnityEngine;
 
 public class MovingObstacle : MonoBehaviour
 {
+    [Range (0,5)]
     public float speed;
     Vector3 targetPos;
-
+    
     public GameObject ways;
     public Transform[] wayPoints;
     int pointIndex;
     int pointCount;
     int direction = 1;
 
+    [Range (0,2)]
     public float waitDuration;
-    int speedMultiplier;
+    int speedMultiplier = 1;
 
     private void Awake()
     {
         wayPoints = new Transform[ways.transform.childCount];
         for (int i = 0; i < ways.gameObject.transform.childCount; i++)
         {
-            wayPoints[i] = ways.transform.GetChild(i).gameObject.transform; 
+            wayPoints[i] = ways.transform.GetChild(i).gameObject.transform;
         }
     }
 
@@ -30,7 +31,7 @@ public class MovingObstacle : MonoBehaviour
     {
         pointCount = wayPoints.Length;
         pointIndex = 1;
-        targetPos = wayPoints[pointIndex].transform.position;
+        targetPos = wayPoints[pointIndex].position;
     }
 
     private void Update()
@@ -61,7 +62,7 @@ public class MovingObstacle : MonoBehaviour
         StartCoroutine(WaitNextPoint());
     }
 
-    IEnumerator WaitNextPoint ()
+    IEnumerator WaitNextPoint()
     {
         speedMultiplier = 0;
         yield return new WaitForSeconds(waitDuration);
