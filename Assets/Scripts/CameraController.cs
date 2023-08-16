@@ -15,6 +15,8 @@ public class CameraController : MonoBehaviour
     public Vector2 xlimit; //X Axis Limitation
     public Vector2 ylimit; //Y Axis Limitation
 
+    [SerializeField] Animator anim;
+
     private void Awake()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;

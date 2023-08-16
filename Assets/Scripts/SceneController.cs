@@ -1,9 +1,11 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 {
     public static SceneController instance;
+    [SerializeField] Animator transitionAnim;
     private void Awake()
     {
         if (instance == null)
@@ -19,11 +21,14 @@ public class SceneController : MonoBehaviour
 
     public void NextLevel()
     {
-        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
+        StartCoroutine(LoadLevel());
     }
 
-    public void LoadScene(string sceneName)
+    IEnumerator LoadLevel()
     {
-        SceneManager.LoadSceneAsync(sceneName);
+        transitionAnim.SetTrigger("End");
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
+        transitionAnim.SetTrigger("Start");
     }
 }
